@@ -23,9 +23,9 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的一个 插件管�
 
 ## 📖 介绍
 
-真寻的插件权限管理系统，提供了
+[小真寻](https://github.com/HibiKier/zhenxun_bot) 的插件权限管理系统，提供了
 
-- **插件开关**
+- **细致的插件开关**
 - **Ban 群组/用户（消息屏蔽）**
 - **插件 Cd，Count，Block 限制**
 - 群管监测(权限自动设置)
@@ -35,8 +35,10 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的一个 插件管�
 继承了真寻的优良传统，高贵的**超级用户**不受权限控制，除非插件额外限制
 
 > [!NOTE]
-> 小真寻也很可爱呀，也会很喜欢你！
-> <img width="250" height="250" src="https://github.com/HibiKier/nonebot-plugin-zxpm/blob/main/docs_image/tt1.jpg"/><img width="250" height="250" src="https://github.com/HibiKier/nonebot-plugin-zxpm/blob/main/docs_image/tt2.jpg"/><img width="250" height="250" src="https://github.com/HibiKier/nonebot-plugin-zxpm/blob/main/docs_image/tt3.jpg"/>
+>
+> <div align="center"><b>小真寻也很可爱呀，也会很喜欢你！</b></div>
+>
+> <div align="center"><img width="250" height="250" src="https://github.com/HibiKier/nonebot-plugin-zxpm/blob/main/docs_image/tt3.png"/><img width="250" height="250" src="https://github.com/HibiKier/nonebot-plugin-zxpm/blob/main/docs_image/tt1.png"/><img width="250" height="250" src="https://github.com/HibiKier/nonebot-plugin-zxpm/blob/main/docs_image/tt2.png"/></div>
 
 ## 💿 安装
 
@@ -50,7 +52,7 @@ nb plugin install nonebot-plugin-zxpm
 
 ## 🎁 使用
 
-#### 帮助
+## 帮助
 
 | 指令 | 格式 | 权限等级 | 参数 | 作用                     | 示例                                                                        |
 | :--: | :--: | :------: | :--: | ------------------------ | --------------------------------------------------------------------------- |
@@ -60,14 +62,14 @@ nb plugin install nonebot-plugin-zxpm
 > 这里的指令只是写了个大概，功能开关指令比较复杂
 > 建议对 bot 发送 `zxpm ZXPM插件管理` 和 `zxpm ZXPM插件管理 -s` 来查看详细帮助
 
-#### 权限设置
+## 权限设置
 
 |   指令   |         格式          | 权限等级  | 参数 | 作用                     | 示例               |
 | :------: | :-------------------: | :-------: | :--: | ------------------------ | ------------------ |
 | 添加权限 | 添加权限 [level] [at] | SUPERUSER |      | 为用户提供插件管理等权限 | `添加权限 5 @user` |
 | 删除权限 |     删除权限 [at]     | SUPERUSER |      | 为用户提供插件管理等权限 | `删除权限 @user`   |
 
-#### Ban/unBan
+## Ban/unBan
 
 **群组管理员**
 
@@ -104,7 +106,7 @@ ban列表 -g [群组Id]: 查找指定群组ban数据
     unban -g 999999     : 将群组9999999从小黑屋中拉出来
 ```
 
-#### 插件控制
+## 插件控制
 
 **群组管理员**
 

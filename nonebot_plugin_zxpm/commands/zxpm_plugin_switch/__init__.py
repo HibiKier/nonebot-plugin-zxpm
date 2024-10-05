@@ -12,7 +12,7 @@ from ._data_source import PluginManage, build_plugin
 from .command import _group_status_matcher, _status_matcher
 
 __plugin_meta__ = PluginMetadata(
-    name="功能开关",
+    name="ZXPM功能开关",
     description="对群组内的功能限制，超级用户可以对群组以及全局的功能被动开关限制",
     usage="""
     普通管理员
