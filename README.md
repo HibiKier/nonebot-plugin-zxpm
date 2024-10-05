@@ -14,20 +14,20 @@
 
 _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的一个 插件管理插件 ✨_
 
-<img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="python">
-<a href="./LICENSE">
-  <img src="https://img.shields.io/github/license/shadow403/nonebot_plugin_lolinfo.svg" alt="license">
-</a>
-<a href="https://pypi.python.org/pypi/nonebot_plugin_lolinfo">
-  <img src="https://img.shields.io/pypi/v/nonebot_plugin_lolinfo.svg" alt="pypi">
-</a>
+![python](https://img.shields.io/badge/python-v3.9%2B-blue)
+![nonebot](https://img.shields.io/badge/nonebot-v2.1.3-yellow)
+![onebot](https://img.shields.io/badge/onebot-v11-black)
+[![license](https://img.shields.io/badge/license-AGPL3.0-FE7D37)](https://github.com/HibiKier/zhenxun_bot/blob/main/LICENSE)
 
 </div>
 
 ## 📖 介绍
 
 真寻的插件权限管理系统，提供了 **插件开关**，**Ban 群组/用户（消息屏蔽）**，**插件 Cd，Count，Block 限制**，群管监测(权限自动设置)，用户权限设置(超级用户设置)，一个简单的帮助查看  
-集成了真寻的优良传统，高贵的**超级用户**不受权限控制，除非插件额外限制
+继承了真寻的优良传统，高贵的**超级用户**不受权限控制，除非插件额外限制
+
+> [!NOTE]
+> 小真寻也很可爱呀，也会很喜欢你！
 
 ## 💿 安装
 
