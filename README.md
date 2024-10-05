@@ -23,11 +23,20 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的一个 插件管�
 
 ## 📖 介绍
 
-真寻的插件权限管理系统，提供了 **插件开关**，**Ban 群组/用户（消息屏蔽）**，**插件 Cd，Count，Block 限制**，群管监测(权限自动设置)，用户权限设置(超级用户设置)，一个简单的帮助查看  
+真寻的插件权限管理系统，提供了
+
+- **插件开关**
+- **Ban 群组/用户（消息屏蔽）**
+- **插件 Cd，Count，Block 限制**
+- 群管监测(权限自动设置)
+- 用户权限设置(超级用户设置)
+- 一个简单的帮助查看
+
 继承了真寻的优良传统，高贵的**超级用户**不受权限控制，除非插件额外限制
 
 > [!NOTE]
 > 小真寻也很可爱呀，也会很喜欢你！
+> <img width="250" height="250" src="https://github.com/HibiKier/nonebot-plugin-zxpm/blob/main/docs_image/tt1.jpg"/><img width="250" height="250" src="https://github.com/HibiKier/nonebot-plugin-zxpm/blob/main/docs_image/tt2.jpg"/><img width="250" height="250" src="https://github.com/HibiKier/nonebot-plugin-zxpm/blob/main/docs_image/tt3.jpg"/>
 
 ## 💿 安装
 
