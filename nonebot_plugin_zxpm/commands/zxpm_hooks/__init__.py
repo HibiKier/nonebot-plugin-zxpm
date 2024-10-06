@@ -1,5 +1,2 @@
-from pathlib import Path
-
-import nonebot
-
-nonebot.load_plugins(str(Path(__file__).parent.resolve()))
+from .zxpm_auth_hook import *  # noqa: F403
+from .zxpm_ban_hook import *  # noqa: F403
