@@ -1,5 +1,6 @@
+import contextlib
+
 from nonebot.adapters import Bot, Event
-from nonebot.adapters.onebot.v11 import PokeNotifyEvent
 from nonebot.exception import IgnoredException
 from nonebot.matcher import Matcher
 from nonebot_plugin_alconna import At, UniMsg
@@ -207,9 +208,12 @@ class AuthChecker:
         if not group_id:
             group_id = channel_id
             channel_id = None
-        if matcher.type == "notice" and not isinstance(event, PokeNotifyEvent):
-            """过滤除poke外的notice"""
-            return
+        with contextlib.suppress(ImportError):
+            from nonebot.adapters.onebot.v11 import PokeNotifyEvent
+
+            if matcher.type == "notice" and not isinstance(event, PokeNotifyEvent):
+                """过滤除poke外的notice"""
+                return
         if user_id and matcher.plugin and (module_path := matcher.plugin.module_name):
             if plugin := await PluginInfo.get_or_none(module_path=module_path):
                 if plugin.plugin_type == PluginType.HIDDEN:
@@ -274,7 +278,11 @@ class AuthChecker:
             group_id = channel_id
             channel_id = None
         if user_id := session.id1:
-            is_poke = isinstance(event, PokeNotifyEvent)
+            is_poke = False
+            with contextlib.suppress(ImportError):
+                from nonebot.adapters.onebot.v11 import PokeNotifyEvent
+
+                is_poke = isinstance(event, PokeNotifyEvent)
             if group_id:
                 sid = group_id or user_id
                 if await GroupConsole.is_superuser_block_plugin(
