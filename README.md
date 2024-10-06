@@ -68,15 +68,16 @@ nb plugin install nonebot-plugin-zxpm
 
 ## 配置
 
-| 配置                    | 类型 |        默认值        | 说明                                                |
-| :---------------------- | :--: | :------------------: | --------------------------------------------------- |
-| zxpm_db_url             | str  | data/zxpm/db/zxpm.db | 数据库地址，默认为 sqlite                           |
-| zxpm_notice_info_cd     | int  |         300          | 群/用户权限检测等各种检测提示信息 cd，为 0 时不提醒 |
-| zxpm_ban_reply          | str  |  才不会给你发消息.   | 用户被 ban 时回复消息，为空时不回复                 |
-| zxpm_ban_level          | int  |          5           | 使用 ban 功能的对应权限                             |
-| zxpm_switch_level       | int  |          1           | 使用开关功能的对应权限                              |
-| zxpm_admin_default_auth | int  |          5           | 群组管理员默认权限                                  |
-| zxpm_font               | str  |       msyh.ttc       | 作图时字体                                          |
+| 配置                    | 类型 |            默认值             | 说明                                                             |
+| :---------------------- | :--: | :---------------------------: | ---------------------------------------------------------------- |
+| zxpm_data_path          | str  |           data/zxpm           | 数据存储路径                                                     |
+| zxpm_db_url             | str  | (`zxpm_data_path`)/db/zxpm.db | 数据库地址 URL，默认为 sqlite,存储路径在`zxpm_data_path`下       |
+| zxpm_notice_info_cd     | int  |              300              | 群/用户权限检测等各种检测提示信息 cd，为 0 时或永久 ban 时不提醒 |
+| zxpm_ban_reply          | str  |       才不会给你发消息.       | 用户被 ban 时回复消息，为空时不回复                              |
+| zxpm_ban_level          | int  |               5               | 使用 ban 功能的对应权限                                          |
+| zxpm_switch_level       | int  |               1               | 使用开关功能的对应权限                                           |
+| zxpm_admin_default_auth | int  |               5               | 群组管理员默认权限                                               |
+| zxpm_font               | str  |           msyh.ttc            | 作图时字体                                                       |
 
 ## 帮助
 
@@ -174,7 +175,8 @@ ban列表 -g [群组Id]: 查找指定群组ban数据
 
 **可修改配置文件**
 
-在`data/zxpm/configs`路径下有以下 3 个配置文件，且文件中已提供参数解释
+在`(zxpm_data_path)/configs`路径下有以 下 3 个配置文件，且文件中已提供参数解释  
+默认路径: `data/zxpm/configs`
 
 - `plugin2block.yaml`: 插件阻塞配置
   例如:
