@@ -7,6 +7,7 @@ from .extra import PluginExtraData
 
 require("nonebot_plugin_alconna")
 require("nonebot_plugin_session")
+require("nonebot_plugin_uninfo")
 
 from .commands import *  # noqa: F403
 

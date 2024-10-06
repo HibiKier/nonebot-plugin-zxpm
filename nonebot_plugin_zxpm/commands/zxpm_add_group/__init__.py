@@ -21,7 +21,6 @@ __plugin_meta__ = PluginMetadata(
     ).dict(),
 )
 
-
 group_increase_handle = on_notice(
     priority=1,
     block=False,
