@@ -18,7 +18,7 @@ __plugin_meta__ = PluginMetadata(
         author="HibiKier",
         version="0.1",
         plugin_type=PluginType.HIDDEN,
-    ).dict(),
+    ).to_dict(),
 )
 
 group_increase_handle = on_notice(

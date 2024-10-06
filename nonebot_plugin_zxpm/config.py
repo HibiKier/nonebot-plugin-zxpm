@@ -3,17 +3,13 @@ from pathlib import Path
 import nonebot
 from pydantic import BaseModel
 
-DATA_PATH = Path() / "data" / "zxpm"
-DB_FILE = DATA_PATH / "db" / "zxpm.db"
-
-DEFAULT_DB_ULR = "sqlite:data/zxpm/db/zxpm.db"
-
-DATA_PATH.mkdir(parents=True, exist_ok=True)
-DB_FILE.parent.mkdir(parents=True, exist_ok=True)
+DEFAULT_DATA_PATH = Path() / "data" / "zxpm"
 
 
 class Config(BaseModel):
-    zxpm_db_url: str | None = DEFAULT_DB_ULR
+    zxpm_data_path: str | Path = str(DEFAULT_DATA_PATH.absolute())
+    """数据存储路径"""
+    zxpm_db_url: str | None = None
     """DB_URL"""
     zxpm_notice_info_cd: int = 300
     """群/用户权限检测等各种检测提示信息cd，为0时不提醒"""
@@ -30,3 +26,15 @@ class Config(BaseModel):
 
 
 ZxpmConfig = nonebot.get_plugin_config(Config)
+
+if isinstance(ZxpmConfig.zxpm_data_path, str):
+    ZxpmConfig.zxpm_data_path = Path(ZxpmConfig.zxpm_data_path)
+ZxpmConfig.zxpm_data_path.mkdir(parents=True, exist_ok=True)
+if ZxpmConfig.zxpm_db_url:
+    if ZxpmConfig.zxpm_db_url.startswith("sqlite"):
+        db_path = ZxpmConfig.zxpm_db_url.split(":")[-1]
+        Path(db_path).parent.mkdir(parents=True, exist_ok=True)
+else:
+    db_path = ZxpmConfig.zxpm_data_path / "db" / "zxpm.db"
+    db_path.parent.mkdir(parents=True, exist_ok=True)
+    ZxpmConfig.zxpm_db_url = f"sqlite:{db_path.absolute()!s}"

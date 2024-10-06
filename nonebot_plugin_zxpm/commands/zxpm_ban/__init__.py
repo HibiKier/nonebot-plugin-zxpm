@@ -66,7 +66,7 @@ __plugin_meta__ = PluginMetadata(
             unban 123456789     : 从小黑屋中拉出来
             unban -g 999999     : 将群组9999999从小黑屋中拉出来
         """,
-    ).dict(),
+    ).to_dict(),
 )
 
 

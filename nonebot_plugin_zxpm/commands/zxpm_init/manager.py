@@ -1,8 +1,9 @@
 from copy import deepcopy
+from pathlib import Path
 
 from ruamel.yaml import YAML
 
-from ...config import DATA_PATH
+from ...config import ZxpmConfig
 from ...enum import BlockType, LimitCheckType, PluginLimitType
 from ...extra.limit import BaseBlock, PluginCdBlock, PluginCountBlock
 from ...log import logger
@@ -55,16 +56,16 @@ result回复："老色批你冲的太快了，欧尼酱先生，请稍后再冲@
 """
 
 
-BASE_PATH = DATA_PATH / "configs"
-BASE_PATH.mkdir(parents=True, exist_ok=True)
-
-
 class Manager:
     """
     插件命令 cd 管理器
     """
 
     def __init__(self):
+        if isinstance(ZxpmConfig.zxpm_data_path, str):
+            ZxpmConfig.zxpm_data_path = Path(ZxpmConfig.zxpm_data_path)
+        BASE_PATH = ZxpmConfig.zxpm_data_path / "configs"
+        BASE_PATH.mkdir(parents=True, exist_ok=True)
         self.cd_file = BASE_PATH / "plugins2cd.yaml"
         self.block_file = BASE_PATH / "plugins2block.yaml"
         self.count_file = BASE_PATH / "plugins2count.yaml"

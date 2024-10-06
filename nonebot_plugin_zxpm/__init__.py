@@ -29,5 +29,5 @@ __plugin_meta__ = PluginMetadata(
         "nonebot_plugin_alconna",
         "nonebot_plugin_session",
     ),
-    extra=PluginExtraData(plugin_type=PluginType.PARENT).dict(),
+    extra=PluginExtraData(plugin_type=PluginType.PARENT).to_dict(),
 )

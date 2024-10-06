@@ -1,3 +1,4 @@
+from nonebot.compat import PYDANTIC_V2
 from pydantic import BaseModel
 
 from ..enum import PluginType
@@ -40,3 +41,6 @@ class PluginExtraData(BaseModel):
     """插件限制"""
     superuser_help: str | None = None
     """超级用户帮助"""
+
+    def to_dict(self):
+        return self.model_dump() if PYDANTIC_V2 else self.dict()
