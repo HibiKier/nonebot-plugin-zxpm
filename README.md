@@ -55,8 +55,8 @@ nb plugin install nonebot-plugin-zxpm
 > [!IMPORTANT]
 > ZXPM 对插件进行了分类  
 > `NORMAL`: 普通插件，没有特定标记的情况下都为这个类型  
-> `ADMIN`: 管理员权限用户插件  
-> `SUPERUSER`: 插件用户插件  
+> `ADMIN`: 群组管理员插件  
+> `SUPERUSER`: 超级用户插件  
 > `SUPER_AND_ADMIN`: 超级用户用于与管理员插件  
 > `DEPENDANT`: 依赖插件，一般为没有主动触发命令的插件，受权限控制  
 > `HIDDEN`: 隐藏插件，一般为没有主动触发命令的插件，不受权限控制，如消息统计  
