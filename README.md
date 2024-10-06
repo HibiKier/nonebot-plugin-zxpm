@@ -27,7 +27,7 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的一个 插件管�
 
 - **细致的插件开关**
 - **Ban 群组/用户（消息屏蔽）**
-- **插件 Cd，Count，Block 限制**
+- **插件 Cd，Count，Block 限制(配置文件)**
 - 群管监测(权限自动设置)
 - 用户权限设置(超级用户设置)
 - 一个简单的帮助查看
@@ -180,7 +180,7 @@ ban列表 -g [群组Id]: 查找指定群组ban数据
   例如:
 
   ```
-  zhenxun.builtin_plugins.sign_in:
+  sign_in:
     status: true
     check_type: ALL
     watch_type: USER
@@ -191,7 +191,7 @@ ban列表 -g [群组Id]: 查找指定群组ban数据
   例如:
 
   ```
-  zhenxun.builtin_plugins.sign_in:
+  sign_in:
     status: true
     check_type: ALL
     watch_type: USER
@@ -203,7 +203,7 @@ ban列表 -g [群组Id]: 查找指定群组ban数据
   例如：
 
   ```
-    zhenxun.builtin_plugins.help:
+    help:
     status: false
     watch_type: GROUP
     result: 再看就揍死你
