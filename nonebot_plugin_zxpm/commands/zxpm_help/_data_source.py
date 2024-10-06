@@ -38,9 +38,12 @@ async def get_plugin_help(user_id: str, name: str, is_superuser: bool) -> str | 
         is_superuser: 是否为超级用户
     """
     type_list = await get_user_allow_help(user_id)
-    plugin = await PluginInfo.get_or_none(
-        name__iexact=name, load_status=True, plugin_type__in=type_list
-    )
+    if name.isdigit():
+        plugin = await PluginInfo.get_or_none(id=int(name), plugin_type__in=type_list)
+    else:
+        plugin = await PluginInfo.get_or_none(
+            name__iexact=name, load_status=True, plugin_type__in=type_list
+        )
     if plugin:
         _plugin = nonebot.get_plugin_by_module_name(plugin.module_path)
         if _plugin and _plugin.metadata:
