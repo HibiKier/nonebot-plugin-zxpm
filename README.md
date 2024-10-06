@@ -53,17 +53,17 @@ nb plugin install nonebot-plugin-zxpm
 ## 🎁 使用
 
 > [!IMPORTANT]
-> ZXPM 对插件进行了分类
-> `NORMAL`: 普通插件，没有特定标记的情况下都为这个类型
-> `ADMIN`: 管理员权限用户插件
-> `SUPERUSER`: 插件用户插件
-> `SUPER_AND_ADMIN`: 超级用户用于与管理员插件
-> `DEPENDANT`: 依赖插件，一般为没有主动触发命令的插件，受权限控制
-> `HIDDEN`: 隐藏插件，一般为没有主动触发命令的插件，不受权限控制，如消息统计
+> ZXPM 对插件进行了分类  
+> `NORMAL`: 普通插件，没有特定标记的情况下都为这个类型  
+> `ADMIN`: 管理员权限用户插件  
+> `SUPERUSER`: 插件用户插件  
+> `SUPER_AND_ADMIN`: 超级用户用于与管理员插件  
+> `DEPENDANT`: 依赖插件，一般为没有主动触发命令的插件，受权限控制  
+> `HIDDEN`: 隐藏插件，一般为没有主动触发命令的插件，不受权限控制，如消息统计  
 > `PARENT`: 父插件，仅仅标记
 >
-> ZXPM 权限管理严格
-> 普通用户无法查看`ADMIN`，`SUPERUSER`，`SUPER_AND_ADMIN`插件的帮助
+> ZXPM 权限管理严格  
+> 普通用户无法查看`ADMIN`，`SUPERUSER`，`SUPER_AND_ADMIN`插件的帮助  
 > 权限管理员用户无法查看`SUPERUSER`插件的帮助
 
 ## 配置
