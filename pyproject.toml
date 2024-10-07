@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-zxpm"
-version = "0.1.9"
+version = "0.2.0"
 description = "真寻的插件管理系统"
 authors = ["HibiKier <775757368@qq.com>"]
 license = "AGPL3.0"

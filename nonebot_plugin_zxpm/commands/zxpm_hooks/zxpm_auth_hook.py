@@ -1,4 +1,4 @@
-from nonebot.adapters.onebot.v11 import Bot, Event
+from nonebot.adapters import Bot, Event
 from nonebot.matcher import Matcher
 from nonebot.message import run_postprocessor, run_preprocessor
 from nonebot_plugin_alconna import UniMsg
