@@ -7,7 +7,6 @@ from nonebot_plugin_uninfo import get_interface
 from ..log import logger
 from ..models.group_console import GroupConsole
 from ..models.plugin_info import PluginInfo
-from .zxpm_admin_watch import *  # noqa: F403
 from .zxpm_ban import *  # noqa: F403
 from .zxpm_help import *  # noqa: F403
 from .zxpm_hooks import *  # noqa: F403
@@ -21,6 +20,7 @@ with contextlib.suppress(ImportError):
     from nonebot.adapters.onebot.v11 import GroupIncreaseNoticeEvent  # noqa: F401
 
     from .zxpm_add_group import *  # noqa: F403
+    from .zxpm_admin_watch import *  # noqa: F403
 
 
 @driver.on_bot_connect
