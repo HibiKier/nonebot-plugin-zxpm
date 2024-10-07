@@ -1,8 +1,5 @@
 from typing import Any, overload
 
-from nonebot import require
-
-require("nonebot_plugin_session")
 from loguru import logger as logger_
 from nonebot_plugin_session import Session
 

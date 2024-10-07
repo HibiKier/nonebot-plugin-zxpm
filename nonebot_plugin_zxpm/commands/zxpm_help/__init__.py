@@ -1,11 +1,9 @@
 from nonebot.adapters import Bot
 from nonebot.plugin import PluginMetadata
-from nonebot.rule import to_me
 from nonebot_plugin_alconna import (
     Alconna,
     AlconnaQuery,
     Args,
-    Match,
     Option,
     Query,
     on_alconna,
