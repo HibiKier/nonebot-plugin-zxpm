@@ -208,11 +208,14 @@ class AuthChecker:
         if not group_id:
             group_id = channel_id
             channel_id = None
-        with contextlib.suppress(ImportError):
+        try:
             from nonebot.adapters.onebot.v11 import PokeNotifyEvent
 
             if matcher.type == "notice" and not isinstance(event, PokeNotifyEvent):
                 """过滤除poke外的notice"""
+                return
+        except ImportError:
+            if matcher.type == "notice":
                 return
         if user_id and matcher.plugin and (module_path := matcher.plugin.module_name):
             if plugin := await PluginInfo.get_or_none(module_path=module_path):

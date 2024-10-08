@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-zxpm"
-version = "0.2.0"
+version = "0.2.1"
 description = "真寻的插件管理系统"
 authors = ["HibiKier <775757368@qq.com>"]
 license = "AGPL3.0"
@@ -9,8 +9,8 @@ homepage = "https://github.com/HibiKier/nonebot-plugin-zxpm"
 repository = "https://github.com/HibiKier/nonebot-plugin-zxpm"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-nonebot2 = {extras = ["fastapi"], version = "^2.3.3"}
+python = "^3.10"
+nonebot2 = "^2.3.3"
 nonebot-plugin-alconna = ">=0.46.3,<1.0.0"
 nonebot-plugin-session = "^0.3.2"
 tortoise-orm = {version = "0.20.0", extras = ["asyncpg"]}
