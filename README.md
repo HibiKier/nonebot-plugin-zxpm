@@ -206,10 +206,10 @@ ban列表 -g [群组Id]: 查找指定群组ban数据
 
   ```
     help:
-    status: false
-    watch_type: GROUP
-    result: 再看就揍死你
-    max_count: 2
+      status: false
+      watch_type: GROUP
+      result: 再看就揍死你
+      max_count: 2
   ```
 
 ## ❤ 感谢
