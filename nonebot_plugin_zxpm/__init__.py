@@ -28,6 +28,7 @@ __plugin_meta__ = PluginMetadata(
     supported_adapters=inherit_supported_adapters(
         "nonebot_plugin_alconna",
         "nonebot_plugin_session",
+        "nonebot_plugin_uninfo",
     ),
     extra=PluginExtraData(plugin_type=PluginType.PARENT).to_dict(),
 )

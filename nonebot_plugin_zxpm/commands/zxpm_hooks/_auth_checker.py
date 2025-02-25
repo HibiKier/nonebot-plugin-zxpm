@@ -11,6 +11,7 @@ from ...config import ZxpmConfig
 from ...enum import BlockType, LimitWatchType, PluginLimitType, PluginType
 from ...extra.limit import CountLimiter, FreqLimiter, UserBlockLimiter
 from ...log import logger
+from ...models.bot_console import BotConsole
 from ...models.group_console import GroupConsole
 from ...models.level_user import LevelUser
 from ...models.plugin_info import PluginInfo
@@ -224,6 +225,7 @@ class AuthChecker:
                     return
                 try:
                     if session.id1 not in bot.config.superusers:
+                        await self.auth_bot(plugin, bot.self_id)
                         await self.auth_group(plugin, session, message)
                         await self.auth_admin(plugin, session)
                         await self.auth_plugin(plugin, session, event)
@@ -367,6 +369,23 @@ class AuthChecker:
                     self._flmt_s.start_cd(group_id or user_id)
                     await MessageUtils.build_message("全局未开启此功能...").send()
                 raise IgnoredException("全局未开启此功能...")
+
+    async def auth_bot(self, plugin: PluginInfo, bot_id: str):
+        """机器人权限
+
+        参数:
+            plugin: PluginInfo
+            bot_id: bot_id
+        """
+        if not await BotConsole.get_bot_status(bot_id):
+            logger.debug("Bot休眠中阻断权限检测...", "AuthChecker")
+            raise IgnoredException("BotConsole休眠权限检测 ignore")
+        if await BotConsole.is_block_plugin(bot_id, plugin.module):
+            logger.debug(
+                f"Bot插件 {plugin.name}({plugin.module}) 权限检查结果为关闭...",
+                "AuthChecker",
+            )
+            raise IgnoredException("BotConsole插件权限检测 ignore")
 
     async def auth_admin(self, plugin: PluginInfo, session: EventSession):
         """管理员命令 个人权限

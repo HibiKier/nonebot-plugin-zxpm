@@ -5,6 +5,7 @@ from nonebot.adapters import Bot
 from nonebot_plugin_uninfo import get_interface
 
 from ..log import logger
+from ..models.bot_console import BotConsole
 from ..models.group_console import GroupConsole
 from ..models.plugin_info import PluginInfo
 from .zxpm_ban import *  # noqa: F403
@@ -13,6 +14,7 @@ from .zxpm_hooks import *  # noqa: F403
 from .zxpm_init import *  # noqa: F403
 from .zxpm_plugin_switch import *  # noqa: F403
 from .zxpm_set_admin import *  # noqa: F403
+from .zxpm_super_group import *  # noqa: F403
 
 driver = nonebot.get_driver()
 
@@ -54,3 +56,6 @@ async def _(bot: Bot):
                 )
     except Exception as e:
         logger.error(f"获取Bot: {bot.self_id} 群组发生错误...", e=e)
+        logger.debug(f"Bot: {bot.self_id} 建立连接...")
+    if not await BotConsole.exists(bot_id=bot.self_id):
+        await BotConsole.create(bot_id=bot.self_id)

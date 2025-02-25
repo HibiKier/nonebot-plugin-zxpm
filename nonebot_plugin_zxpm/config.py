@@ -23,6 +23,8 @@ class Config(BaseModel):
     """群组管理员默认权限"""
     zxpm_font: str = "msyh.ttc"
     """字体"""
+    zxpm_limit_superuser: bool = False
+    """是否限制超管权限"""
 
 
 ZxpmConfig = nonebot.get_plugin_config(Config)
